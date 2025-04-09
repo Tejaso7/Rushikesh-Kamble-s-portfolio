@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rushikesh Kamble – DevOps Engineer | Cloud & Automation Specialist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'IBM Plex Mono', monospace;
+            background-color: #0a0a0f;
+            color: #e2e8f0;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .tech-icon {
+            transition: all 0.3s ease;
+            background: rgba(30, 58, 138, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        .tech-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px rgba(45, 212, 191, 0.5);
+        }
+        .project-card {
+            background: linear-gradient(145deg, #111827 0%, #1e1b4b 100%);
+            border: 1px solid rgba(45, 212, 191, 0.1);
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(45, 212, 191, 0.2);
+            border-color: rgba(45, 212, 191, 0.3);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #2DD4BF 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .console-effect {
+            position: relative;
+        }
+        .console-effect::after {
+            content: '|';
+            animation: blink 1s infinite;
+            position: absolute;
+            right: -10px;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .glow-effect {
+            box-shadow: 0 0 15px rgba(45, 212, 191, 0.5);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: linear-gradient(90deg, #2DD4BF 0%, #3b82f6 100%);
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .terminal-window {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(45, 212, 191, 0.2);
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        .terminal-header {
+            background: rgba(30, 58, 138, 0.3);
+            border-bottom: 1px solid rgba(45, 212, 191, 0.2);
+        }
+        .terminal-body {
+            background: rgba(15, 23, 42, 0.5);
+        }
+        .command-line {
+            color: #2DD4BF;
+        }
+        .command-output {
+            color: #e2e8f0;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid rgba(45, 212, 191, 0.3);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #2DD4BF;
+            border: 3px solid #0a0a0f;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+    <!-- Navigation -->
+    <nav class="bg-gray-900/80 backdrop-blur-md fixed w-full z-10 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold gradient-text">Rushikesh Kamble</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="nav-link text-gray-300 hover:text-white transition">About</a>
+                    <a href="#projects" class="nav-link text-gray-300 hover:text-white transition">Projects</a>
+                    <a href="#experience" class="nav-link text-gray-300 hover:text-white transition">Experience</a>
+                    <a href="#contact" class="nav-link text-gray-300 hover:text-white transition">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-toggle" class="text-gray-300 hover:text-white">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900/95 backdrop-blur-md pb-4 px-4 border-b border-gray-800">
+            <a href="#about" class="block py-2 text-gray-300 hover:text-white transition">About</a>
+            <a href="#projects" class="block py-2 text-gray-300 hover:text-white transition">Projects</a>
+            <a href="#experience" class="block py-2 text-gray-300 hover:text-white transition">Experience</a>
+            <a href="#contact" class="block py-2 text-gray-300 hover:text-white transition">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-gray-900 via-blue-900/30 to-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <div class="terminal-window mb-8">
+                        <div class="terminal-header px-4 py-2 flex items-center">
+                            <div class="flex space-x-2 mr-4">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            </div>
+                            <div class="text-sm text-gray-400">terminal -- rushikesh-kamble</div>
+                        </div>
+                        <div class="terminal-body p-4 font-mono">
+                            <p class="command-line">$ whoami</p>
+                            <p class="command-output mb-4">Rushikesh Kamble - DevOps Engineer</p>
+                            <p class="command-line">$ skills --show</p>
+                            <p class="command-output mb-4">AWS | Kubernetes | Docker | CI/CD | Python | Linux</p>
+                            <p class="command-line">$ contact --now</p>
+                            <p class="command-output animate-pulse">Connecting to cloud infrastructure...</p>
+                        </div>
+                    </div>
+                    
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text console-effect">Building Scalable Cloud Solutions</h1>
+                    <p class="text-xl mb-8 text-gray-400">Infrastructure as Code | Cloud Native Architectures | DevOps Automation</p>
+                    <div class="flex space-x-4">
+                        <a href="#projects" class="bg-gradient-to-r from-blue-600 to-teal-500 text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition glow-effect">
+                            <i class="fas fa-code-branch mr-2"></i> View Projects
+                        </a>
+                        <a href="#contact" class="border-2 border-teal-400 text-teal-400 px-6 py-3 rounded-lg font-medium hover:bg-teal-400/10 transition">
+                            <i class="fas fa-terminal mr-2"></i> Contact Me
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-teal-400/20 glow-effect">
+                            <!-- Placeholder for profile image with tech overlay -->
+                            <div class="w-full h-full bg-gray-800 flex items-center justify-center relative">
+                                <div class="absolute inset-0 bg-gradient-to-br from-blue-900/30 to-teal-500/20"></div>
+                                <i class="fas fa-user-astronaut text-6xl text-teal-400 z-10"></i>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-5 -right-5 bg-gray-800 p-3 rounded-lg border border-gray-700 shadow-lg">
+                            <div class="flex items-center">
+                                <div class="bg-blue-600 p-2 rounded-full mr-2">
+                                    <i class="fas fa-cloud text-white text-sm"></i>
+                                </div>
+                                <span class="text-sm font-mono">AWS Certified</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 gradient-text">About Me</h2>
+            <div class="md:flex items-center">
+                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                    <div class="relative">
+                        <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-teal-400/20 glow-effect">
+                            <div class="w-full h-full bg-gray-800 flex items-center justify-center relative">
+                                <div class="absolute inset-0 bg-gradient-to-br from-blue-900/30 to-teal-500/20"></div>
+                                <i class="fas fa-user-astronaut text-5xl text-teal-400 z-10"></i>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-3 -left-3 bg-gray-800 p-2 rounded-lg border border-gray-700 shadow-lg">
+                            <div class="flex items-center">
+                                <div class="bg-purple-600 p-1 rounded-full mr-2">
+                                    <i class="fas fa-ship text-white text-xs"></i>
+                                </div>
+                                <span class="text-xs font-mono">Kubernetes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-12">
+                    <div class="terminal-window mb-8">
+                        <div class="terminal-header px-4 py-2 flex items-center">
+                            <div class="flex space-x-2 mr-4">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            </div>
+                            <div class="text-sm text-gray-400">bio.txt</div>
+                        </div>
+                        <div class="terminal-body p-6">
+                            <p class="mb-6">Hi, I'm <span class="font-bold text-teal-400">Rushikesh Kamble</span>! A passionate DevOps Engineer with hands-on experience in containerization, cloud computing, and CI/CD pipelines. I'm skilled in Linux, Docker, Kubernetes, and AWS, with strong foundations in Python and shell scripting for automation tasks.</p>
+                            <p class="font-mono text-sm text-gray-400">$ cat skills.txt</p>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold mb-4 text-teal-400">Core Competencies</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="tech-icon p-4 rounded-lg border border-gray-800">
+                            <div class="text-teal-400 mb-2">
+                                <i class="fas fa-cloud text-2xl"></i>
+                            </div>
+                            <h4 class="font-medium">Cloud Platforms</h4>
+                            <p class="text-sm text-gray-400">AWS (EC2), GCP</p>
+                        </div>
+                        <div class="tech-icon p-4 rounded-lg border border-gray-800">
+                            <div class="text-teal-400 mb-2">
+                                <i class="fas fa-robot text-2xl"></i>
+                            </div>
+                            <h4 class="font-medium">Automation</h4>
+                            <p class="text-sm text-gray-400">Python, Shell Scripting</p>
+                        </div>
+                        <div class="tech-icon p-4 rounded-lg border border-gray-800">
+                            <div class="text-teal-400 mb-2">
+                                <i class="fab fa-docker text-2xl"></i>
+                            </div>
+                            <h4 class="font-medium">Containers</h4>
+                            <p class="text-sm text-gray-400">Docker, Kubernetes</p>
+                        </div>
+                        <div class="tech-icon p-4 rounded-lg border border-gray-800">
+                            <div class="text-teal-400 mb-2">
+                                <i class="fas fa-sync-alt text-2xl"></i>
+                            </div>
+                            <h4 class="font-medium">CI/CD</h4>
+                            <p class="text-sm text-gray-400">Jenkins, GitHub Actions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tech Stack -->
+            <div class="mt-16">
+                <h3 class="text-xl font-bold mb-6 text-center text-teal-400">Tech Stack</h3>
+                <div class="terminal-window">
+                    <div class="terminal-header px-4 py-2 flex items-center">
+                        <div class="flex space-x-2 mr-4">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <div class="text-sm text-gray-400">tech-stack.sh</div>
+                    </div>
+                    <div class="terminal-body p-6">
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <div class="tech-icon p-4 rounded-full border border-gray-800 w-16 h-16 flex items-center justify-center">
+                                <i class="fab fa-aws text-2xl text-orange-400"></i>
+                            </div>
+                            <div class="tech-icon p-4 rounded-full border border-gray-800 w-16 h-16 flex items-center justify-center">
+                                <i class="fab fa-linux text-2xl text-gray-300"></i>
+                            </div>
+                            <div class="tech-icon p-4 rounded-full border border-gray-800 w-16 h-16 flex items-center justify-center">
+                                <i class="fab fa-docker text-2xl text-blue-300"></i>
+                            </div>
+                            <div class="tech-icon p-4 rounded-full border border-gray-800 w-16 h-16 flex items-center justify-center">
+                                <i class="fas fa-ship text-2xl text-blue-400"></i> <!-- Kubernetes -->
+                            </div>
+                            <div class="tech-icon p-4 rounded-full border border-gray-800 w-16 h-16 flex items-center justify-center">
+                                <i class="fab fa-jenkins text-2xl text-red-400"></i>
+                            </div>
+                            <div class="tech-icon p-4 rounded-full border border-gray-800 w-16 h-16 flex items-center justify-center">
+                                <i class="fab fa-git-alt text-2xl text-orange-500"></i>
+                            </div>
+                            <div class="tech-icon p-4 rounded-full border border-gray-800 w-16 h-16 flex items-center justify-center">
+                                <i class="fab fa-python text-2xl text-blue-400"></i>
+                            </div>
+                            <div class="tech-icon p-4 rounded-full border border-gray-800 w-16 h-16 flex items-center justify-center">
+                                <i class="fas fa-terminal text-2xl text-gray-300"></i> <!-- Bash -->
+                            </div>
+                            <div class="tech-icon p-4 rounded-full border border-gray-800 w-16 h-16 flex items-center justify-center">
+                                <i class="fas fa-database text-2xl text-blue-300"></i> <!-- PostgreSQL -->
+                            </div>
+                            <div class="tech-icon p-4 rounded-full border border-gray-800 w-16 h-16 flex items-center justify-center">
+                                <i class="fab fa-php text-2xl text-purple-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-gradient-to-br from-gray-900 via-blue-900/20 to-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 gradient-text">DevOps Projects</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card rounded-xl overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-blue-900/80 to-blue-800/50 flex items-center justify-center relative">
+                        <div class="absolute inset-0 opacity-20" style="background-image: url('https://raw.githubusercontent.com/cncf/artwork/master/projects/kubernetes/icon/color/kubernetes-icon-color.svg'); background-size: 50%; background-position: center; background-repeat: no-repeat;"></div>
+                        <i class="fas fa-project-diagram text-6xl text-blue-400 opacity-30 z-10"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-teal-400">Three-Tier Application Deployment</h3>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-900/50 text-blue-300 text-xs px-3 py-1 rounded-full">Kubernetes</span>
+                            <span class="bg-blue-900/50 text-blue-300 text-xs px-3 py-1 rounded-full">Docker</span>
+                            <span class="bg-blue-900/50 text-blue-300 text-xs px-3 py-1 rounded-full">Jenkins</span>
+                        </div>
+                        <p class="text-gray-400 mb-4">Architected and deployed a three-tier application using Kubernetes for advanced container orchestration with separate frontend, backend, and database layers.</p>
+                        <ul class="list-disc pl-5 text-gray-400 mb-4 space-y-1 text-sm">
+                            <li>Implemented CI/CD workflows using Jenkins</li>
+                            <li>Utilized Docker Compose for local development</li>
+                            <li>Configured advanced networking and service discovery</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card rounded-xl overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-teal-900/80 to-blue-800/50 flex items-center justify-center relative">
+                        <div class="absolute inset-0 opacity-20" style="background-image: url('https://raw.githubusercontent.com/jenkinsci/jenkins/master/logo/src/main/logo/jenkins_logo.svg'); background-size: 50%; background-position: center; background-repeat: no-repeat;"></div>
+                        <i class="fas fa-code text-6xl text-teal-400 opacity-30 z-10"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-teal-400">CI/CD Pipeline for Full-Stack App</h3>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-900/50 text-blue-300 text-xs px-3 py-1 rounded-full">Jenkins</span>
+                            <span class="bg-blue-900/50 text-blue-300 text-xs px-3 py-1 rounded-full">Docker</span>
+                            <span class="bg-blue-900/50 text-blue-300 text-xs px-3 py-1 rounded-full">Node.js</span>
+                        </div>
+                        <p class="text-gray-400 mb-4">Developed a complete CI/CD pipeline for a full-stack application using Jenkins and Docker with multi-container environment deployment.</p>
+                        <ul class="list-disc pl-5 text-gray-400 mb-4 space-y-1 text-sm">
+                            <li>Containerized application with Docker</li>
+                            <li>Managed dependencies with JFrog Artifactory</li>
+                            <li>Configured Nginx Proxy Manager for domain mapping</li>
+                            <li>Optimized pipeline efficiency by 70%</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card rounded-xl overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-purple-900/80 to-pink-800/50 flex items-center justify-center relative">
+                        <div class="absolute inset-0 opacity-20" style="background-image: url('https://raw.githubusercontent.com/reactjs/reactjs.org/main/src/icons/logo.svg'); background-size: 40%; background-position: center; background-repeat: no-repeat;"></div>
+                        <i class="fas fa-shopping-cart text-6xl text-purple-400 opacity-30 z-10"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-teal-400">CodeRush E-commerce App</h3>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-900/50 text-blue-300 text-xs px-3 py-1 rounded-full">React</span>
+                            <span class="bg-blue-900/50 text-blue-300 text-xs px-3 py-1 rounded-full">Tailwind CSS</span>
+                            <span class="bg-blue-900/50 text-blue-300 text-xs px-3 py-1 rounded-full">JWT Auth</span>
+                        </div>
+                        <p class="text-gray-400 mb-4">Designed and developed 'CodeRush,' an e-commerce app for ebooks with user-centric design and responsive themes.</p>
+                        <ul class="list-disc pl-5 text-gray-400 mb-4 space-y-1 text-sm">
+                            <li>Implemented smart filters for easy searches</li>
+                            <li>Streamlined user registration with guest login</li>
+                            <li>Created personalized dashboards</li>
+                            <li>Prioritized data integrity with robust validation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://github.com/rushikamble15" class="inline-flex items-center px-6 py-3 border border-teal-400 text-teal-400 rounded-lg hover:bg-teal-400/10 transition font-mono">
+                    <i class="fab fa-github mr-2"></i> git clone https://github.com/rushikamble15
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 gradient-text">Work Experience</h2>
+            
+            <div class="terminal-window max-w-3xl mx-auto">
+                <div class="terminal-header px-4 py-2 flex items-center">
+                    <div class="flex space-x-2 mr-4">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <div class="text-sm text-gray-400">experience.log</div>
+                </div>
+                <div class="terminal-body p-6">
+                    <!-- Experience 1 -->
+                    <div class="timeline-item mb-8">
+                        <div class="mb-2">
+                            <h3 class="text-xl font-bold text-teal-400">SDE Intern</h3>
+                            <p class="text-gray-400">Compserv Consultants Pvt Ltd | Core Banking Solutions</p>
+                        </div>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-300">
+                            <li>Developed and optimized reports using PostgreSQL, PHP, Jasper iReport, and pgAdmin</li>
+                            <li>Implemented efficient data binding between Jasper reports and PostgreSQL</li>
+                            <li>Collaborated to improve project functionality and created reports on loan transactions</li>
+                            <li>Resolved critical issues during testing, ensuring bug-free reports</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Experience 2 -->
+                    <div class="timeline-item">
+                        <div class="mb-2">
+                            <h3 class="text-xl font-bold text-teal-400">Summer Intern</h3>
+                            <p class="text-gray-400">ProLeap Academy</p>
+                        </div>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-300">
+                            <li>Gained hands-on experience with Linux and Virtualization</li>
+                            <li>Learned and implemented Docker, Kubernetes for containerization and orchestration</li>
+                            <li>Applied Python and Shell Scripting for automation and scripting tasks</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Certifications & Education -->
+            <div class="mt-16">
+                <h3 class="text-xl font-bold mb-6 text-center text-teal-400">Certifications & Education</h3>
+                
+                <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                    <div class="tech-icon p-6 rounded-lg border border-gray-800">
+                        <div class="text-teal-400 mb-3 flex items-center">
+                            <i class="fas fa-certificate text-3xl mr-3"></i>
+                            <div>
+                                <h4 class="font-bold">Certifications</h4>
+                                <ul class="list-disc pl-5 text-gray-400 text-sm mt-2 space-y-1">
+                                    <li>Introduction to Cloud Computing - IBM</li>
+                                    <li>Kubernetes for Absolute Beginners - KodeKloud</li>
+                                    <li>Jenkins for Beginners - KodeKloud</li>
+                                    <li>Docker Course for Absolute Beginner - KodeKloud</li>
+                                    <li>Linux Fundamentals - ProLeap Academy</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-icon p-6 rounded-lg border border-gray-800">
+                        <div class="text-teal-400 mb-3 flex items-center">
+                            <i class="fas fa-graduation-cap text-3xl mr-3"></i>
+                            <div>
+                                <h4 class="font-bold">Education</h4>
+                                <ul class="list-disc pl-5 text-gray-400 text-sm mt-2 space-y-1">
+                                    <li>MCA - Masters of Computer Applications<br>PG, Chhatrapati Shahu Institute of Business Education And Research</li>
+                                    <li>BSC.CS - Bachelors of Science - Computer Science<br>UG, Willingdon College, Sangli</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gradient-to-br from-gray-900 via-blue-900/20 to-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 gradient-text">Get In Touch</h2>
+            
+            <div class="md:flex max-w-5xl mx-auto">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-8">
+                    <div class="terminal-window h-full">
+                        <div class="terminal-header px-4 py-2 flex items-center">
+                            <div class="flex space-x-2 mr-4">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            </div>
+                            <div class="text-sm text-gray-400">contact.sh</div>
+                        </div>
+                        <div class="terminal-body p-6 h-full flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-start mb-6">
+                                    <div class="text-teal-400 mr-4 mt-1">
+                                        <i class="fas fa-envelope text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium">Email</h4>
+                                        <a href="mailto:rushikamble15@gmail.com" class="text-gray-400 hover:text-teal-400 transition font-mono break-all">rushikamble15@gmail.com</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start mb-6">
+                                    <div class="text-teal-400 mr-4 mt-1">
+                                        <i class="fas fa-phone text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium">Phone</h4>
+                                        <a href="tel:+918855912827" class="text-gray-400 hover:text-teal-400 transition font-mono">+91 8855912827</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start mb-6">
+                                    <div class="text-teal-400 mr-4 mt-1">
+                                        <i class="fab fa-linkedin text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium">LinkedIn</h4>
+                                        <a href="https://linkedin.com/in/rushikesh-kamble" target="_blank" class="text-gray-400 hover:text-teal-400 transition font-mono">linkedin.com/in/rushikesh-kamble</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="text-teal-400 mr-4 mt-1">
+                                        <i class="fab fa-github text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium">GitHub</h4>
+                                        <a href="https://github.com/rushikamble15" target="_blank" class="text-gray-400 hover:text-teal-400 transition font-mono">github.com/rushikamble15</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8">
+                                <p class="text-gray-400 mb-2">Or connect via terminal:</p>
+                                <div class="bg-gray-800 p-3 rounded border border-gray-700 font-mono text-sm">
+                                    <p class="text-teal-400">$ ssh rushikesh@devops-engineer</p>
+                                    <p class="text-gray-300">Connecting to professional network...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="terminal-window h-full">
+                        <div class="terminal-header px-4 py-2 flex items-center">
+                            <div class="flex space-x-2 mr-4">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            </div>
+                            <div class="text-sm text-gray-400">send-message.py</div>
+                        </div>
+                        <div class="terminal-body p-6 h-full">
+                            <form id="contactForm" class="space-y-4">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-400 mb-1">Name</label>
+                                    <input type="text" id="name" name="name" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 font-mono">
+                                </div>
+                                
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-400 mb-1">Email</label>
+                                    <input type="email" id="email" name="email" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 font-mono">
+                                </div>
+                                
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-gray-400 mb-1">Message</label>
+                                    <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 font-mono"></textarea>
+                                </div>
+                                
+                                <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-teal-500 text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition glow-effect flex items-center justify-center">
+                                    <i class="fas fa-paper-plane mr-2"></i> Execute Send
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/80 backdrop-blur-md py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p class="text-xl italic mb-4 text-teal-400 font-mono">"Infrastructure as Code, Excellence as Habit."</p>
+                <div class="flex justify-center space-x-6 mb-6">
+                    <a href="https://linkedin.com/in/rushikesh-kamble" target="_blank" class="text-gray-400 hover:text-teal-400 transition">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="https://github.com/rushikamble15" target="_blank" class="text-gray-400 hover:text-teal-400 transition">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="mailto:rushikamble15@gmail.com" class="text-gray-400 hover:text-teal-400 transition">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </a>
+                </div>
+                <p class="text-sm text-gray-500 font-mono">© 2024 Rushikesh Kamble. All systems operational.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Form submission with terminal-like effect
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Create terminal output
+            const form = this;
+            const terminalBody = form.closest('.terminal-body');
+            
+            // Clear form
+            form.classList.add('hidden');
+            
+            // Show processing message
+            const processingMsg = document.createElement('div');
+            processingMsg.innerHTML = `
+                <p class="text-teal-400 mb-2">$ ./send_message.py --name="${name}" --email="${email}"</p>
+                <p class="text-gray-300 mb-4">Sending message to Rushikesh's network...</p>
+                <div class="flex space-x-2 mb-4">
+                    <div class="w-3 h-3 rounded-full bg-teal-500 animate-pulse"></div>
+                    <div class="w-3 h-3 rounded-full bg-teal-500 animate-pulse delay-100"></div>
+                    <div class="w-3 h-3 rounded-full bg-teal-500 animate-pulse delay-200"></div>
+                </div>
+            `;
+            terminalBody.appendChild(processingMsg);
+            
+            // Simulate processing
+            setTimeout(() => {
+                processingMsg.innerHTML += `
+                    <p class="text-green-400 mb-4">✓ Message successfully delivered!</p>
+                    <p class="text-gray-400">Rushikesh will respond soon. You can also connect directly via:</p>
+                    <p class="text-teal-400 mt-2">$ linkedin --open --profile=rushikesh-kamble</p>
+                `;
+                
+                // Reset form after delay
+                setTimeout(() => {
+                    form.reset();
+                    form.classList.remove('hidden');
+                    processingMsg.remove();
+                }, 5000);
+            }, 2000);
+        });
+
+        // Console typing effect for hero section
+        const consoleElement = document.querySelector('.console-effect');
+        const phrases = [
+            "Building Scalable Cloud Solutions",
+            "Automating Infrastructure",
+            "Optimizing CI/CD Pipelines",
+            "Containerizing Applications"
+        ];
+        let currentPhrase = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let isEnd = false;
+
+        function type() {
+            const fullTxt = phrases[currentPhrase];
+            
+            if (isDeleting) {
+                consoleElement.textContent = fullTxt.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                consoleElement.textContent = fullTxt.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            if (!isDeleting && charIndex === fullTxt.length) {
+                isEnd = true;
+                setTimeout(() => {
+                    isDeleting = true;
+                }, 2000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                currentPhrase = (currentPhrase + 1) % phrases.length;
+            }
+            
+            const speedUp = Math.random() * (100 - 50) + 50;
+            const normalSpeed = Math.random() * (300 - 200) + 200;
+            const time = isEnd ? 2000 : isDeleting ? speedUp : normalSpeed;
+            
+            setTimeout(type, time);
+        }
+
+        // Start typing effect after page loads
+        setTimeout(type, 1000);
+    </script>
+</body>
+</html>
